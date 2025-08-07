@@ -12,9 +12,17 @@ func main() {
 		return c.String(http.StatusOK, ping())
 	})
 
+	e.GET("/easy", func(c echo.Context) error {
+		return c.String(http.StatusOK, easy())
+	})
+
 	e.Logger.Fatal(e.Start(":1323"))
 }
 
 func ping() string {
+	return "pong"
+}
+
+func easy() string {
 	return "easy!!!"
 }
