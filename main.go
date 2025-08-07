@@ -16,5 +16,5 @@ func main() {
 }
 
 func ping() string {
-	return "pong"
+	return "easy!!!"
 }
