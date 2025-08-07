@@ -15,7 +15,7 @@ spec:
       containers:
       - name: my-echo
         image: fujino0818/my-echo:20XX0807
-        imagePullPolicy: Always
+        #imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
