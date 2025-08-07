@@ -1,20 +1,29 @@
 package main
 
 import (
-	"net/http"
+    "net/http"
 
-	"github.com/labstack/echo/v4"
+    "github.com/labstack/echo/v4"
 )
 
 func main() {
-	e := echo.New()
-	e.GET("/ping", func(c echo.Context) error {
-		return c.String(http.StatusOK, ping())
-	})
+    e := echo.New()
+    e.GET("/ping", func(c echo.Context) error {
+        return c.String(http.StatusOK, ping())
+    })
 
-	e.Logger.Fatal(e.Start(":1323"))
+    // aliveを追加
+    e.GET("/easy", func(c echo.Context) error {
+        return c.String(http.StatusOK, easy())
+    })
+
+    e.Logger.Fatal(e.Start(":1323"))
 }
 
 func ping() string {
-	return "easy!!!"
+    return "pong"
+}
+
+func easy() string {
+    return "easy"
 }
